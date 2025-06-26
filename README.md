@@ -2,6 +2,11 @@
   <img src=".meta_hailo.jpg" />
 </p>
 
+# Notes about the GK-Concept/scarthgap branch
+
+* based on Hailo RT 4.20.1 (using more recent version will mean that the HEF files used in our setup no longer work)
+* this corresponds to v3.31.0 (of what?) in Hailo's messy versioning
+* the scarthgap branch is based on the kirkstone branch at that version
 
 # Meta-Hailo #
 
