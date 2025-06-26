@@ -28,10 +28,12 @@ ROOTFS_APPS_DIR = "${D}/home/root/apps"
 
 APPS_DIR_PREFIX = "${WORKDIR}/git/apps/"
 IMX8_DIR = "${APPS_DIR_PREFIX}/h8/gstreamer/imx8/"
+RPI5_DIR = "${APPS_DIR_PREFIX}/h8/gstreamer/raspberrypi/"
 HAILO15_DIR = "${APPS_DIR_PREFIX}/h15/gstreamer/"
 
 REQS_PATH = "${FILE_DIRNAME}/files/"
 REQS_IMX8_FILE = "${REQS_PATH}download_reqs_imx8.txt"
+REQS_RPI5_FILE = "${REQS_PATH}download_reqs_rpi5.txt"
 REQS_HAILO15_FILE = "${REQS_PATH}download_reqs_hailo15.txt"
 
 REQS_FILE = ""
@@ -40,6 +42,9 @@ python () {
     if 'imx8' in d.getVar('MACHINE'):
         d.setVar('REQS_FILE', d.getVar('REQS_IMX8_FILE'))
         d.setVar('ARM_APPS_DIR', d.getVar('IMX8_DIR'))
+    elif 'maestro-pi5' in d.getVar('MACHINE'):
+        d.setVar('REQS_FILE', d.getVar('REQS_RPI5_FILE'))
+        d.setVar('ARM_APPS_DIR', d.getVar('RPI5_DIR'))
     else:
         d.setVar('REQS_FILE', d.getVar('REQS_HAILO15_FILE'))
         d.setVar('ARM_APPS_DIR', d.getVar('HAILO15_DIR'))

@@ -1,0 +1,2 @@
+https://hailo-tappas.s3.eu-west-2.amazonaws.com/v3.31/raspberrypi/hefs/yolov5m_wo_spp_60p.hef -> apps/h8/gstreamer/raspberrypi/detection -> 732eff2e4f831ea7affb8a948174bb32
+https://hailo-tappas.s3.eu-west-2.amazonaws.com/v3.31/raspberrypi/hefs/ssd_mobilenet_v1.hef -> apps/h8/gstreamer/raspberrypi/detection -> 79fcde8c532bd78d62eedbfd81bab83d
