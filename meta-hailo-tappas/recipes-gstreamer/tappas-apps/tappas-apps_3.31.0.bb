@@ -1,5 +1,5 @@
 DESCRIPTION = "TAPPAS ARM applications recipe, \
-               the recipe copies the app script, hef files and media to /home/root/apps \
+               the recipe copies the app script, hef files and media to /root/apps \
                the apps hefs and media urls are taken from files/download_reqs.txt"
 
 PV_PARSED = "${@ '${PV}'.replace('.0', '')}"
@@ -24,7 +24,7 @@ LPR_APP_NAME = "license_plate_recognition"
 OPENCV_UTIL = "libhailo_cv_singleton.so"
 GST_IMAGES_UTIL = "libhailo_gst_image.so"
 
-ROOTFS_APPS_DIR = "${D}/home/root/apps"
+ROOTFS_APPS_DIR = "${D}/root/apps"
 
 APPS_DIR_PREFIX = "${WORKDIR}/git/apps/"
 IMX8_DIR = "${APPS_DIR_PREFIX}/h8/gstreamer/imx8/"
@@ -59,7 +59,7 @@ CURRENT_REQ_FILE = ""
 
 # meson configuration
 EXTRA_OEMESON += " \
-        -Dapps_install_dir='/home/root/apps' \
+        -Dapps_install_dir='/root/apps' \
         -Dinstall_lpr='${INSTALL_LPR}' \
         -Dlibcxxopts='${STAGING_INCDIR}/cxxopts' \
         -Dlibrapidjson='${STAGING_INCDIR}/rapidjson' \
@@ -139,7 +139,7 @@ fakeroot python do_install_requirements() {
 }
 
 
-FILES:${PN} += " /home/root/apps/* /home/root/apps/${LPR_APP_NAME}/* /home/root/apps/${LPR_APP_NAME}/resources/* /usr/lib/${OPENCV_UTIL}.${PV} /usr/lib/${GST_IMAGES_UTIL}.${PV}"
+FILES:${PN} += " /root/apps/* /root/apps/${LPR_APP_NAME}/* /root/apps/${LPR_APP_NAME}/resources/* /usr/lib/${OPENCV_UTIL}.${PV} /usr/lib/${GST_IMAGES_UTIL}.${PV}"
 FILES:${PN}-lib += "/usr/lib/${OPENCV_UTIL}.${PV} /usr/lib/${GST_IMAGES_UTIL}.${PV}"
 RDEPENDS:${PN}-staticdev = ""
 RDEPENDS:${PN}-dev = ""
