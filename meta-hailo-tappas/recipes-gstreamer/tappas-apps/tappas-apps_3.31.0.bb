@@ -42,7 +42,7 @@ python () {
     if 'imx8' in d.getVar('MACHINE'):
         d.setVar('REQS_FILE', d.getVar('REQS_IMX8_FILE'))
         d.setVar('ARM_APPS_DIR', d.getVar('IMX8_DIR'))
-    elif 'maestro-pi5' in d.getVar('MACHINE'):
+    elif 'rpi5' in d.getVar('MACHINE'):
         d.setVar('REQS_FILE', d.getVar('REQS_RPI5_FILE'))
         d.setVar('ARM_APPS_DIR', d.getVar('RPI5_DIR'))
     else:
